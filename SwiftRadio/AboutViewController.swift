@@ -11,12 +11,15 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     //*****************************************************************
     // MARK: - ViewDidLoad
     //*****************************************************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
    
     //*****************************************************************

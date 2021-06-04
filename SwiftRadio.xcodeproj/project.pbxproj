@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221EA32A26152B7F00C08405 /* SwiftRadioScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EA32926152B7F00C08405 /* SwiftRadioScene.swift */; };
+		221EA3572633736D00C08405 /* CommonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EA3562633736D00C08405 /* CommonPage.swift */; };
+		221EA35D26376A6800C08405 /* CommonTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EA35C26376A6800C08405 /* CommonTestCase.swift */; };
+		22DC064C2667D2D30026CF7F /* SwiftRadioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC064B2667D2D30026CF7F /* SwiftRadioPage.swift */; };
+		22F30571265EE9E3008DEFFB /* NowPlayingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F30570265EE9E3008DEFFB /* NowPlayingPage.swift */; };
+		22F30575265EEA27008DEFFB /* NavigationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F30574265EEA27008DEFFB /* NavigationPage.swift */; };
+		22F30579265EEA6C008DEFFB /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F30578265EEA6C008DEFFB /* InfoPage.swift */; };
+		22F3057D265EEA95008DEFFB /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3057C265EEA95008DEFFB /* MenuPage.swift */; };
+		22F30581265EEACC008DEFFB /* AboutSwiftRadioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F30580265EEACC008DEFFB /* AboutSwiftRadioPage.swift */; };
 		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
 		53113F39230C720900462C0E /* ShareImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53113F38230C720900462C0E /* ShareImageGenerator.swift */; };
 		5F22BA3C1F72AD5A00CB5911 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA1E1F72AD3700CB5911 /* SpringLabel.swift */; };
@@ -75,6 +84,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221EA32926152B7F00C08405 /* SwiftRadioScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioScene.swift; sourceTree = "<group>"; };
+		221EA3562633736D00C08405 /* CommonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPage.swift; sourceTree = "<group>"; };
+		221EA35C26376A6800C08405 /* CommonTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTestCase.swift; sourceTree = "<group>"; };
+		22DC064B2667D2D30026CF7F /* SwiftRadioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioPage.swift; sourceTree = "<group>"; };
+		22F30570265EE9E3008DEFFB /* NowPlayingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPage.swift; sourceTree = "<group>"; };
+		22F30574265EEA27008DEFFB /* NavigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPage.swift; sourceTree = "<group>"; };
+		22F30578265EEA6C008DEFFB /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		22F3057C265EEA95008DEFFB /* MenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPage.swift; sourceTree = "<group>"; };
+		22F30580265EEACC008DEFFB /* AboutSwiftRadioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSwiftRadioPage.swift; sourceTree = "<group>"; };
 		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,9 +175,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221EA32726152B1900C08405 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				221EA3562633736D00C08405 /* CommonPage.swift */,
+				22F30570265EE9E3008DEFFB /* NowPlayingPage.swift */,
+				22F30574265EEA27008DEFFB /* NavigationPage.swift */,
+				22F30578265EEA6C008DEFFB /* InfoPage.swift */,
+				22F3057C265EEA95008DEFFB /* MenuPage.swift */,
+				22F30580265EEACC008DEFFB /* AboutSwiftRadioPage.swift */,
+				22DC064B2667D2D30026CF7F /* SwiftRadioPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		221EA32826152B4100C08405 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				221EA32926152B7F00C08405 /* SwiftRadioScene.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		221EA3352631A94700C08405 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				221EA32826152B4100C08405 /* Common */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		221EA3362631A99E00C08405 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				221EA35C26376A6800C08405 /* CommonTestCase.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		2C5545BB1C1124DE00728469 /* SwiftRadioUITests */ = {
 			isa = PBXGroup;
 			children = (
+				221EA3362631A99E00C08405 /* Tests */,
+				221EA3352631A94700C08405 /* Core */,
+				221EA32726152B1900C08405 /* Pages */,
 				2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */,
 				2C5545BE1C1124DE00728469 /* Info.plist */,
 			);
@@ -442,7 +501,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F30581265EEACC008DEFFB /* AboutSwiftRadioPage.swift in Sources */,
+				221EA35D26376A6800C08405 /* CommonTestCase.swift in Sources */,
+				22DC064C2667D2D30026CF7F /* SwiftRadioPage.swift in Sources */,
 				2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */,
+				22F30575265EEA27008DEFFB /* NavigationPage.swift in Sources */,
+				22F3057D265EEA95008DEFFB /* MenuPage.swift in Sources */,
+				22F30579265EEA6C008DEFFB /* InfoPage.swift in Sources */,
+				221EA3572633736D00C08405 /* CommonPage.swift in Sources */,
+				221EA32A26152B7F00C08405 /* SwiftRadioScene.swift in Sources */,
+				22F30571265EE9E3008DEFFB /* NowPlayingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
