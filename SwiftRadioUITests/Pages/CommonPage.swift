@@ -10,4 +10,47 @@ import Foundation
 import XCTest
 
 class CommonPage {
+    
+    let view: XCUIElement
+    let app: XCUIApplication
+    
+    init(
+        view: XCUIElement,
+        app: XCUIApplication
+    ) {
+        self.view = view
+        self.app = app
     }
+    
+    enum AnotherAppIds: String {
+        case documentsApp = "com.apple.DocumentsApp"
+        case safari = "com.apple.mobilesafari"
+        case springBoard = "com.apple.springboard"
+        case settings = "com.apple.Preferences"
+        case vividApp = "com.vivid.money.debug"
+    }
+    
+    
+    //Screen element detection function
+    func getElementPositionAsCGFloat(element: XCUIElement) -> (x: CGFloat, y: CGFloat) {
+        let frame = element.frame
+        let xPosition = frame.origin.x
+        let yPosition = frame.origin.y
+        let screenWidth = UIScreen.main.fixedCoordinateSpace
+            .bounds.width
+        let screenHeight = UIScreen.main.fixedCoordinateSpace
+            .bounds.height
+        let elementXPositionAsPortionOfScreen = xPosition / screenWidth
+        let elementYPositionAsPortionOfScreen = yPosition / screenHeight
+        return (
+            x: elementXPositionAsPortionOfScreen,
+            y: elementYPositionAsPortionOfScreen
+        )
+    }
+    
+    //Fuction explicit wait
+    func waitFor(timeInterval: TimeInterval) {
+        Thread.sleep(forTimeInterval: timeInterval)
+    }
+    
+}

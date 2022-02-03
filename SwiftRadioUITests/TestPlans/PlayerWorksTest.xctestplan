@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "D3DF04E6-0AF2-4A16-A7FE-B870D1C3BE4B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftRadio.xcodeproj",
+      "identifier" : "9409E1151ABF6FEA00312E2B",
+      "name" : "SwiftRadio"
+    }
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "AboutStationTest",
+        "CommonTestCase",
+        "OpenAboutTest",
+        "SelectStationTest",
+        "SwiftRadioScene",
+        "SwiftRadioUITests"
+      ],
+      "target" : {
+        "containerPath" : "container:SwiftRadio.xcodeproj",
+        "identifier" : "2C5545B91C1124DE00728469",
+        "name" : "SwiftRadioUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

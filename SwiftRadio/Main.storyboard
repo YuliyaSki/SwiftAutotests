@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kdl-ej-Zz5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kdl-ej-Zz5">
     <device id="retina5_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StationCell" rowHeight="90" id="hMr-La-1Ga" customClass="StationTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hMr-La-1Ga" id="NhW-Qy-GCO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
@@ -161,9 +161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GpH-v2-Q95" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                            </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6v-dQ-Ces" userLabel="Pop-up View">
                                 <rect key="frame" x="82" y="255" width="250" height="206"/>
                                 <subviews>
@@ -270,6 +267,9 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="4YL-N4-xkC" firstAttribute="top" secondItem="K6v-dQ-Ces" secondAttribute="top" constant="8" id="EP4-Qc-tOn"/>
                                     <constraint firstItem="4YL-N4-xkC" firstAttribute="leading" secondItem="K6v-dQ-Ces" secondAttribute="leading" constant="8" id="LJH-vM-Cww"/>
@@ -279,6 +279,13 @@
                                     <constraint firstAttribute="height" constant="206" id="grb-dB-tzx"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GpH-v2-Q95" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <accessibility key="accessibilityConfiguration" identifier="closeMenuField">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ogy-0t-iKH"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -432,7 +439,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
                                         <rect key="frame" x="132" y="0.0" width="126" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="songName"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="songName">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -448,7 +457,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIj-4c-kRh" userLabel="Company-Button">
                                 <rect key="frame" x="12" y="692" width="90" height="36"/>
-                                <accessibility key="accessibilityConfiguration" identifier="companyButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="openAboutPage"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Qr8-LJ-AFv"/>
                                     <constraint firstAttribute="height" constant="36" id="m1i-gc-0rZ"/>
@@ -491,7 +500,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-H0-2Po" userLabel="InformationButton">
                                         <rect key="frame" x="36" y="4" width="22" height="22"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="informationButton"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="openInfoPage"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="IbM-ag-eBx"/>
                                             <constraint firstAttribute="width" constant="22" id="LtX-vH-4q5"/>
@@ -604,7 +613,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stationImage" translatesAutoresizingMaskIntoConstraints="NO" id="AHg-sm-9St">
                                         <rect key="frame" x="0.0" y="186.66666666666666" width="110" height="69.999999999999972"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="stationIcon">
+                                        <accessibility key="accessibilityConfiguration" identifier="stationIconInfo">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                         <constraints>
@@ -631,7 +640,7 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="uXf-Wr-UiK" userLabel="Background Image View">
                                                 <rect key="frame" x="0.0" y="16" width="264" height="427"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="stationImage">
+                                                <accessibility key="accessibilityConfiguration" identifier="stationImageInfo">
                                                     <bool key="isElement" value="YES"/>
                                                 </accessibility>
                                             </imageView>
@@ -641,7 +650,7 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-ka-9k5">
                                 <rect key="frame" x="20" y="523" width="374" height="149"/>
-                                <accessibility key="accessibilityConfiguration" identifier="stationLongDesc">
+                                <accessibility key="accessibilityConfiguration" identifier="stationLongDescInfo">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <constraints>
@@ -655,7 +664,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-bZ-7Pz">
                                 <rect key="frame" x="20" y="680" width="374" height="36"/>
                                 <color key="backgroundColor" red="0.15054957568645477" green="0.15034264326095581" blue="0.15674735605716705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="okayButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="okayButtonInfo"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Gpj-99-oS5"/>
                                 </constraints>
@@ -754,7 +763,9 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AK-QT-5Xg">
                                 <rect key="frame" x="20" y="108" width="374" height="225"/>
-                                <accessibility key="accessibilityConfiguration" identifier="infoAppFeatures"/>
+                                <accessibility key="accessibilityConfiguration" identifier="infoAppFeatures">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="350" id="L5G-S8-88G"/>
                                 </constraints>
@@ -804,7 +815,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-Uk-iUq">
                                         <rect key="frame" x="0.0" y="68" width="382" height="36"/>
                                         <color key="backgroundColor" red="0.20187027752399445" green="0.2016473114490509" blue="0.20853230357170105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="okayInfoButton"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="okayButton"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="EYd-7e-NvX"/>
                                         </constraints>

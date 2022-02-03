@@ -9,49 +9,149 @@
 import Foundation
 import XCTest
 
-class nameNowPlayingPage: CommonPage {
-    let albumImage = XCUIApplication().images["albumImage"]
-    let previousButton = XCUIApplication().buttons["previousButton"]
-    let playPauseButton = XCUIApplication().buttons["playPauseButton"]
-    let stopButton = XCUIApplication().buttons["stopButton"]
-    let nextButton = XCUIApplication().buttons["nextButton"]
-    let songName = XCUIApplication().staticTexts["songName"]
-    let artistName = XCUIApplication().staticTexts["artistName"]
-    let volMinButton = XCUIApplication().images["volMinButton"]
-    let volMaxButton = XCUIApplication().images["volMaxButton"]
-    let companyButton = XCUIApplication().buttons["companyButton"]
-    let shareButton = XCUIApplication().buttons["shareButton"]
-    let informationButton = XCUIApplication().buttons["informationButton"]
-    let horizontalSlider = XCUIApplication().sliders.element.adjust(toNormalizedSliderPosition: 0.25)
+class NowPlayingPage: CommonPage {
+    
+    // MARK: - Initializers
+    
+    init(app: XCUIApplication) {
+        super.init(
+            view: app.otherElements[AccessibilityIDs.NowPlayingPage.screen.rawValue],
+            app: app
+        )
+    }
+    
+    //MARK: UI elements
+    
+    private lazy var albumImage: XCUIElement = {
+        app.images[AccessibilityIDs.NowPlayingPage.albumImage.rawValue]
+    }()
+    
+    private lazy var previousButton: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.previousButton.rawValue]
+    }()
+    
+    private lazy var playPauseButton: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.playPauseButton.rawValue]
+    }()
+    
+    private lazy var stopButton: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.stopButton.rawValue]
+    }()
+    
+    private lazy var nextButton: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.nextButton.rawValue]
+    }()
+    
+    private lazy var songName: XCUIElement = {
+        app.staticTexts[AccessibilityIDs.NowPlayingPage.songName.rawValue]
+    }()
+    
+    private lazy var artistName: XCUIElement =  {
+        app.staticTexts[AccessibilityIDs.NowPlayingPage.artistName.rawValue]
+    }()
+    
+    private lazy var volMinButton: XCUIElement = {
+        app.images[AccessibilityIDs.NowPlayingPage.volMinButton.rawValue]
+    }()
+    
+    private lazy var volMaxButton: XCUIElement = {
+        app.images[AccessibilityIDs.NowPlayingPage.volMaxButton.rawValue]
+    }()
+    
+    private lazy var openAboutPage: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.openAboutPage.rawValue]
+    }()
+    
+    private lazy var shareButton: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.shareButton.rawValue]
+    }()
+    
+    private lazy var openInfoPage: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.openInfoPage.rawValue]
+    }()
+    
+    private lazy var airPlay: XCUIElement = {
+        app.buttons[AccessibilityIDs.NowPlayingPage.airPlay.rawValue]
+    }()
+    
+    private lazy var leftNavBarButton: XCUIElement = {
+        app.navigationBars.children(matching: .button).firstMatch
+    }()
     
     
-    func clickOnStopButton() {
+    //let horizontalSlider = XCUIApplication().sliders.element.adjust(toNormalizedSliderPosition: 0.25)
+    
+    //MARK: Actions
+    
+    @discardableResult
+    func clickOnStopButton() -> Self {
         stopButton.tap()
+        return self
     }
     
-    func clickOnpreviousButton() {
+    @discardableResult
+    func clickOnPreviousButton() -> Self {
         previousButton.tap()
+        return self
     }
     
-    func clickPlayPauseButton() {
+    @discardableResult
+    func clickPlayPauseButton() -> Self {
         playPauseButton.tap()
+        return self
     }
     
-    func clickNextButton() {
+    @discardableResult
+    func clickNextButton() -> SwiftRadioPage {
         nextButton.tap()
+        return SwiftRadioPage(app: app)
     }
     
-    func clickCompanyButton() {
-        companyButton.tap()
+    @discardableResult
+    func clickOpenAboutPageButton() -> AboutSwiftRadioPage {
+        openAboutPage.tap()
+        return AboutSwiftRadioPage(app: app)
     }
     
-    func clickShareButton() {
+    @discardableResult
+    func clickShareButton() -> Self {
         shareButton.tap()
+        return self
     }
     
-    func clickInformationButton() {
-        informationButton.tap()
+    @discardableResult
+    func clickInformationButton() -> InfoStationPage {
+        openInfoPage.tap()
+        return InfoStationPage(app: app)
     }
     
+    @discardableResult
+    func clickBackNavBarButton() -> SwiftRadioPage {
+        leftNavBarButton.tap()
+        return SwiftRadioPage(app: app)
+    }
+    
+    @discardableResult
+    func checkSongName() -> Self {
+        XCTAssertTrue(songName.exists)
+        return self
+    }
+    
+    @discardableResult
+    func checkSongPause() -> Self {
+        XCTAssertEqual(songName.label, "Station Paused...")
+        return self
+    }
+    
+    @discardableResult
+    func checkSongStop() -> Self {
+        XCTAssertEqual(songName.label, "Station Stopped...")
+        return self
+    }
+    
+    func checkSongPlayAfterStop() -> Self {
+        XCTAssertNotEqual(songName.label, "Station Stopped...")
+        return self
+    }
     
 }
