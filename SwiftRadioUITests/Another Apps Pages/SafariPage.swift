@@ -9,19 +9,12 @@
 import Foundation
 import XCTest
 
-final class SafariPage:CommonPage {
+final class SafariPage:BaseScreen {
     
     let safariApp =
         XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
     
     // MARK: - Initializers
-
-    init(app: XCUIApplication) {
-        super.init(
-            view: safariApp.windows.firstMatch,
-            app: app
-        )
-    }
     
     private lazy var URL: XCUIElement = {
         safariApp.textFields["URL"].firstMatch

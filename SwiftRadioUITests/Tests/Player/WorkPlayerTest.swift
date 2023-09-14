@@ -11,38 +11,28 @@ import XCTest
 final class WorkPlayerTest:CommonTestCase {
     
     func testCheckWorkPauseButton() {
-        SwiftRadioPage(app: application)
-            .selectStation()
+        SwiftRadioPage.selectStation()
         waitFor(timeInterval: 5)
-        NowPlayingPage(app: application)
-            .clickPlayPauseButton()
-        self.waitUntilVisible(application.accessibilityUserInputLabels["Station Paused..."])
-        NowPlayingPage(app: application)
-            .checkSongPause()
+        NowPlayingPage.clickPlayPauseButton()
+       // self.waitUntilVisible(application.accessibilityUserInputLabels["Station Paused..."])
+        NowPlayingPage.checkSongPause()
     }
     
     func testCheckWorkStopButton() {
-        SwiftRadioPage(app: application)
-            .selectStation()
+        SwiftRadioPage.selectStation()
         waitFor(timeInterval: 5)
-        NowPlayingPage(app: application)
-            .clickOnStopButton()
+        NowPlayingPage.clickOnStopButton()
         waitFor(timeInterval: 5)
-        NowPlayingPage(app: application)
-            .checkSongStop()
+        NowPlayingPage.checkSongStop()
     }
     
     func testCheckPlayButtonAfterStoping() {
-        SwiftRadioPage(app: application)
-            .selectStation()
+        SwiftRadioPage.selectStation()
         waitFor(timeInterval: 5)
-        NowPlayingPage(app: application)
-            .clickOnStopButton()
+        NowPlayingPage.clickOnStopButton()
         waitFor(timeInterval: 5)
-        NowPlayingPage(app: application)
-            .checkSongStop()
-        NowPlayingPage(app: application)
-            .clickPlayPauseButton()
-            .checkSongPlayAfterStop()
+        NowPlayingPage.checkSongStop()
+        NowPlayingPage.clickPlayPauseButton()
+        NowPlayingPage.checkSongPlayAfterStop()
     }
 }

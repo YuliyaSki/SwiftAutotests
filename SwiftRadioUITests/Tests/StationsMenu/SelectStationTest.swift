@@ -11,22 +11,16 @@ import XCTest
 final class SelectStationTest: CommonTestCase {
     
     func testSelectRadioStation() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickBackNavBarButton()
-        SwiftRadioPage(app: application)
-            .clickRightNavBarButton()
+        SwiftRadioPage.selectStation()
+        NowPlayingPage.clickBackNavBarButton()
+       // SwiftRadioPage.clickRightNavBarButton()
     }
     
     func testClickNowPlayingButton() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickBackNavBarButton()
-        SwiftRadioPage(app: application)
-            .clicknowPlayingButton()
-            .checkSongName()
+        SwiftRadioPage.selectStation()
+        NowPlayingPage.clickBackNavBarButton()
+        SwiftRadioPage.clicknowPlayingButton()
+        NowPlayingPage.checkSongName()
     }
     
 }

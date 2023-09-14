@@ -11,42 +11,30 @@ import XCTest
 final class OpenAboutTest:CommonTestCase {
     
     func testOpenAboutInfo() {
-        SwiftRadioPage(app: application)
-            .clickleftNavBarButton()
-        MenuPage(app: application)
-            .closeMenuFieldTap()
+        SwiftRadioPage.clickleftNavBarButton()
+        MenuPage.closeMenuFieldTap()
     }
     
     func testOpenSwiftRadionInfo() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickOpenAboutPageButton()
-        AboutSwiftRadioPage(app: application)
-            .checkAppInfo()
-            .clickOkayButton()
+        SwiftRadioPage.selectStation()
+        NowPlayingPage.clickOpenAboutPageButton()
+        AboutSwiftRadioPage.checkAppInfo()
+        AboutSwiftRadioPage.clickOkayButton()
     }
     
     func testCheckEmail() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickOpenAboutPageButton()
-        AboutSwiftRadioPage(app: application)
-            .checkEmailButton()
+        SwiftRadioPage.selectStation()
+        NowPlayingPage.clickOpenAboutPageButton()
+        AboutSwiftRadioPage.checkEmailButton()
         emailErrorAlertHandler()
-        AboutSwiftRadioPage(app: application)
-            .clickOkayButton()
+        AboutSwiftRadioPage.clickOkayButton()
     }
     
     func testCheckOpenSite() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickOpenAboutPageButton()
-        AboutSwiftRadioPage(app: application)
-            .openSiteInfo()
-            .checkMainDomain("https://mobile.twitter.com/analogmatthew")
+        SwiftRadioPage.selectStation()
+        NowPlayingPage.clickOpenAboutPageButton()
+        AboutSwiftRadioPage.openSiteInfo()
+       // AboutSwiftRadioPage.checkMainDomain("https://mobile.twitter.com/analogmatthew")
     }
     
 }

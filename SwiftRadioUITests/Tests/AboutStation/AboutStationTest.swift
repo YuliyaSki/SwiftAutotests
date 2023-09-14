@@ -12,12 +12,17 @@ import XCTest
 final class AboutStationTest:CommonTestCase {
     
     func testOpenInfoStation() {
-        SwiftRadioPage(app: application)
-            .selectStation()
-        NowPlayingPage(app: application)
-            .clickInformationButton()
-        InfoStationPage(app: application)
-            .checkStationNameInfoPage()
-            .closeInfoPage()
+        step("Выбирать станцию") {
+            SwiftRadioPage.selectStation()
+        }
+        step("Открыть окно с информацией о станции") {
+            NowPlayingPage.openInfoPage.tap()
+        }
+        step("Проверка отображения имени станции") {
+            InfoStationPage.checkStationNameInfoPage()
+        }
+        step("Закрыть окно с информацией о станции") {
+            InfoStationPage.okayButtonInfo.tap()
+        }
     }
 }

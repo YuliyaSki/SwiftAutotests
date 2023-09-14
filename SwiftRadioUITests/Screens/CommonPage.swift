@@ -11,17 +11,6 @@ import XCTest
 
 class CommonPage {
     
-    let view: XCUIElement
-    let app: XCUIApplication
-    
-    init(
-        view: XCUIElement,
-        app: XCUIApplication
-    ) {
-        self.view = view
-        self.app = app
-    }
-    
     enum AnotherAppIds: String {
         case documentsApp = "com.apple.DocumentsApp"
         case safari = "com.apple.mobilesafari"
